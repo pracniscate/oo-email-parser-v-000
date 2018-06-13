@@ -24,9 +24,9 @@ class EmailParser
       # split the emails by commas
       data = row.split(", ")
 
-      # make a new instance 
-      person = self.new 
-      # return the person to collect 
+      # make a new instance
+      person = self.new
+      # return the person to collect
       person
     end
     # return the array
