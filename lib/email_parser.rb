@@ -4,18 +4,25 @@
 # or whitespace (' ').
 
 class EmailParser
-
-  @@all = []
-
   attr_accessor :email
+  @@all = []
 
   def initialize(email)
     @email = email
     @@all << self
   end
 
-  def parse
+  def self.all
+    @@all 
+  end
 
+  def self.parse(csv_data)
+    # split the CSV data into an array of individual rows
+    rows = csv_data.split("\n")
+    # for each row, collect a Person instance based on the data 
+    people = rows.collect do |row|
+      # split the emails by commas 
+      data = row.split(", ")
   end
 
 end
