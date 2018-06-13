@@ -13,16 +13,24 @@ class EmailParser
   end
 
   def self.all
-    @@all 
+    @@all
   end
 
   def self.parse(csv_data)
     # split the CSV data into an array of individual rows
     rows = csv_data.split("\n")
-    # for each row, collect a Person instance based on the data 
+    # for each row, collect a Person instance based on the data
     people = rows.collect do |row|
-      # split the emails by commas 
+      # split the emails by commas
       data = row.split(", ")
+
+      # make a new instance 
+      person = self.new 
+      # return the person to collect 
+      person
+    end
+    # return the array
+    people
   end
 
 end
