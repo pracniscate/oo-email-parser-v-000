@@ -11,7 +11,7 @@ class EmailParser
   end
 
   def parse
-    emails.split(/[" "]/).select {|email| email.length > 1}.uniq
+    emails.split(/[" ",]/).select {|email| email.length > 1}.uniq
   end
 
 end
